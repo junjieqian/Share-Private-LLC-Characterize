@@ -1,5 +1,9 @@
 /* BEGIN_LEGAL
  * ... REFER TO OTHER FILE FOR LICENSE
+ *
+ * Trace printed out with mem addr and thread id recorded
+ * Build Instruction: make dir obj-intel64/threadtrace.so
+ * Run option: /opt/pin-2.13-61206-gcc.4.4.7-linux/pin -t obj-intel64/threadtrace.so -- /bin/ls
  */
 
 #include <stdio.h>
