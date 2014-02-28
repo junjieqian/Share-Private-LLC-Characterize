@@ -1,0 +1,11 @@
+
+LRU Cache model
+
+Input: 
+	trace file, format would be "tid,addr", while tid is decimal and addr is hex
+	cache parameters, passed with "-set 'set-associativity' -way 'n-way' -block 'block-size-Byte' -size 'total-size-MB'", default is 16-way set associative 64B line size and 8MB size.
+
+Output: (suppose this is going to run on clusters)
+	file containing, each memory address 1. tagged with "S(hard)" or "P(rivate)"; 2. times it has been brought into cache; 3. longest reuse distance??; 4. time accessed during it is in cache; TD
+
+
