@@ -28,7 +28,8 @@ for benchmark in canneal dedup ferret fluidanimate freqmine raytrace streamclust
 		mkdir -p $CurrentDir/$benchmark
 	fi
 	$parsecmgmt -a run -p $benchmark -n $core -i $input
-#	$pin -t $pintool -- parsecmgmt -a run -p $benchmark
+	cd $CurrentDir/$benchmark # CurrentDir is changing
+#	$pin -t $pintool -- $parsecmgmt -a run -p $benchmark -n $core -i $input
   echo "======================Done with $benchmark==============="
 done
 
