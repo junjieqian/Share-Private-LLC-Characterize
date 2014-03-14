@@ -1,0 +1,6 @@
+MR-Python
+===========================
+MapReduce in Python
+
+Although Hadoop is a great framework to work with Python, sometimes one shared memory cluster or CMPs platform is more popular with personal use. Considering friendness of Python with file processing, MR-Python is developped to process big data files as log or trace.
+

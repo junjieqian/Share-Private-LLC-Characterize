@@ -6,13 +6,11 @@
 #include <boost/algorithm/string.hpp>
 #include <vector>
 #include <stdlib.h> // exit
-#include "cache.h"
 
 using namespace boost;
 
 int setsize    = 16;      // 16-way set associative
 int setnum     = 8192;    // total 8192 sets on the cache
-int cachesize  = 8388608; // 8MB cache size
 string infile  = "";      // trace file name
 string outfile = "";      // output file name
 
@@ -21,10 +19,7 @@ void doargs(int argc, char ** argv) {
   int i = 0;
   int blocksize = 0;
   for (;i<argc;++i) {
-    if (argv[i] == "-cache") {
-      cachesize = atoi(argv[++i].c_str());
-    } // end parse cache size
-    else if ( argv[i] == "-set" )
+    if ( argv[i] == "-set" )
       setsize = atoi(argv[++i].c_str());
     else if ( argv[i] == "-block" ) {
       blocksize = atoi(argv[++i].c_str());
@@ -38,13 +33,13 @@ void doargs(int argc, char ** argv) {
       helper();
       exit(0);
     }
-  }
+  } // end for loop, parser the args
 }
 
 // helper function
 int helper() {
-  cout << "USAGE of this tool: simulator -cache [integer in byte] -set [integer, set associative] -block [integer in byte] -infile [path to the trace file] -outfile [path to output file]\n";
-  cout << "\t default values, -cache is 8388608 (8MB), -set is 16, -block is 64B, -infile and -outfile are NULL\n"
+  cout << "USAGE of this tool: simulator -set [integer, set associative] -block [integer in byte] -infile [path to the trace file] -outfile [path to output file]\n";
+  cout << "\t default values, -set is 16, -block is 64B, -infile and -outfile are NULL\n"
   return 0;
 }
 

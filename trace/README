@@ -1,0 +1,6 @@
+trace section:
+	1. using pintool to collect the trace (http://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool)
+	2. both tools in pintools can be adopted to generate the trace
+	3. sample trace available in ./sample
+
+
