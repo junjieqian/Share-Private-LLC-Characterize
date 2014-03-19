@@ -4,3 +4,8 @@ MapReduce in Python
 
 Although Hadoop is a great framework to work with Python, sometimes one shared memory cluster or CMPs platform is more popular with personal use. Considering friendness of Python with file processing, MR-Python is developped to process big data files as log or trace.
 
+Motivation for this work is: we have a extremely large trace file (average > 100GB) to process, and the cluster manager does not allow us to allocate more than 4GB memory for each job core. The special property of this trace work is that this is one memory trace to fit into LLC set associative cache, so we decide to divide the whole trace into parts by sets and parallel them. But the difficult part, except for the implementation of the MapReduce, is we want to explore both shared/private types which means we need to dynamically determine record type online.
+
+Implementation: the codes for MapReduce part are in "pyro" directory, "mapreduce.py" is supposed to manage the workload.
+
+
